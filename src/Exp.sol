@@ -94,7 +94,7 @@ contract Exp is IExp, ERC20, Ownable {
         address from,
         address to,
         uint256 amount
-    ) public virtual override returns (bool) {
+    ) public override returns (bool) {
         revert Soulbound();
     }
 
