@@ -5,7 +5,6 @@ import "./BaseExp.sol";
 
 /// @title Test for Ownership
 contract TestOwner is BaseExp {
-
     // emulete the event model just for testing
     event MinterUpdated(address indexed minter);
 
@@ -40,6 +39,4 @@ contract TestOwner is BaseExp {
         exp.setApprovedMinter(minter);
         assertEq(exp.minter(), minter);
     }
-
-
 }

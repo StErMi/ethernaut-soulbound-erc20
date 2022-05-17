@@ -1,11 +1,14 @@
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.13;
 
-
 interface IExp {
+    /*//////////////////////////////////////////////////////////////
+                                 PUBLIC FUNCTIONS
+    //////////////////////////////////////////////////////////////*/
 
-    // PUBLIC FUNCTION
-
+    /// @notice Set the new minter user
+    /// @dev only owner can call this method
+    /// @param newMinter the new minter
     function setApprovedMinter(address newMinter) external;
 
     /// @notice Mint EXP tokens

@@ -8,8 +8,7 @@ import "./interface/IExp.sol";
 
 /// @title Exp nft contract
 /// @notice The NFT Token is soulbound
-contract Exp is IExp, ERC20, Ownable { 
-
+contract Exp is IExp, ERC20, Ownable {
     /*//////////////////////////////////////////////////////////////
                                  STORAGE
     //////////////////////////////////////////////////////////////*/
@@ -36,7 +35,7 @@ contract Exp is IExp, ERC20, Ownable {
     //////////////////////////////////////////////////////////////*/
 
     modifier onlyMinter() {
-        if( msg.sender != minter ) revert OnlyMinter();
+        if (msg.sender != minter) revert OnlyMinter();
         _;
     }
 
@@ -55,9 +54,9 @@ contract Exp is IExp, ERC20, Ownable {
     /// @param newMinter the new minter
     function setApprovedMinter(address newMinter) external onlyOwner {
         // the new minter cannot be a empty
-        if( newMinter == address(0) ) revert EmptyMinter();
+        if (newMinter == address(0)) revert EmptyMinter();
         // the new minter cannot be the same as the old one (prevent event spam)
-        if( newMinter == minter ) revert OldMinterEqualNewMinter();
+        if (newMinter == minter) revert OldMinterEqualNewMinter();
 
         minter = newMinter;
         emit MinterUpdated(newMinter);
@@ -80,18 +79,16 @@ contract Exp is IExp, ERC20, Ownable {
         revert Soulbound();
     }
 
-    
     /// @notice Overridden to be soulbound, tokens cannot be transferred
     function allowance(address owner, address spender) public pure override returns (uint256) {
         revert Soulbound();
     }
 
-    
     /// @notice Overridden to be soulbound, tokens cannot be transferred
     function approve(address spender, uint256 amount) public pure override returns (bool) {
         revert Soulbound();
     }
-    
+
     /// @notice Overridden to be soulbound, tokens cannot be transferred
     function transferFrom(
         address from,

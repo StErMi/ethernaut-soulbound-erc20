@@ -5,12 +5,11 @@ import "./BaseExp.sol";
 
 /// @title Test for Ownership
 contract TestSoulbound is BaseExp {
-
     uint256 constant AMOUNT_TO_MINT = 10;
 
     function setUp() public override {
         super.setUp();
-        
+
         vm.prank(owner);
         exp.setApprovedMinter(minter);
 
@@ -53,6 +52,4 @@ contract TestSoulbound is BaseExp {
         vm.expectRevert(Exp.Soulbound.selector);
         exp.decreaseAllowance(minter, AMOUNT_TO_MINT);
     }
-
-
 }

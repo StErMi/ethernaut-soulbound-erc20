@@ -1,2 +1,15 @@
-cache/
-out/
+node_modules
+.env
+
+#Hardhat files / foundry
+cache
+artifacts
+out
+
+#Solidity coverage
+coverage
+coverage.json
+
+
+#Typechain
+typechain

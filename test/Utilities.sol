@@ -18,36 +18,31 @@ contract Utilities is DSTest {
         return user;
     }
 
-    function createUsers(uint256 userNum, uint256 initialFunds, string[] memory userLabels)
-        public
-        returns (address payable[] memory)
-    {
+    function createUsers(
+        uint256 userNum,
+        uint256 initialFunds,
+        string[] memory userLabels
+    ) public returns (address payable[] memory) {
         address payable[] memory users = new address payable[](userNum);
         for (uint256 i = 0; i < userNum; i++) {
             address payable user = this.getNextUserAddress();
             vm.deal(user, initialFunds);
             users[i] = user;
-            
-            if( userLabels.length != 0 ) {
+
+            if (userLabels.length != 0) {
                 vm.label(user, userLabels[i]);
             }
         }
         return users;
     }
 
-    function createUsers(uint256 userNum, uint256 initialFunds)
-        public
-        returns (address payable[] memory)
-    {
+    function createUsers(uint256 userNum, uint256 initialFunds) public returns (address payable[] memory) {
         string[] memory a;
         return createUsers(userNum, initialFunds, a);
     }
 
     //create users with 100 ether balance
-    function createUsers(uint256 userNum)
-        public
-        returns (address payable[] memory)
-    {
+    function createUsers(uint256 userNum) public returns (address payable[] memory) {
         return createUsers(userNum, 100 ether);
     }
 
