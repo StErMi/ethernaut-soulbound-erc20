@@ -1,5 +1,7 @@
 # Ethenaut Bounty: Soulbound ERC20
 
+Ropsten Testnet contract: https://ropsten.etherscan.io/address/0xcf4111362047bca0ad7e0c584b878d79c98cea04#code
+
 ## Features
 
 - Soulbound ERC20: minted tokens cannot be transferred
@@ -9,12 +11,17 @@
 
 ## Getting Started
 
-Click "Use this template" on [GitHub](https://github.com/foundry-rs/forge-template) to create a new repository with this repo as the initial state.
-
-Or, if your repo already exists, run:
-
 ```sh
 forge init
 forge build
 forge test
+```
+
+## Deployment
+
+Copy `.env.example` to `.env` and fill in the values.
+
+```sh
+npm install
+npm run deploy:ropsten
 ```
