@@ -1,6 +1,6 @@
 # Ethenaut Bounty: Soulbound ERC20
 
-Ropsten Testnet contract: https://ropsten.etherscan.io/address/0xcf4111362047bca0ad7e0c584b878d79c98cea04#code
+Ropsten Testnet contract: https://ropsten.etherscan.io/address/0xea1dc5c64b50234c634d37463367d650460ac5c8#code
 
 ## Features
 
