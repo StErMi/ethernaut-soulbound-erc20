@@ -23,8 +23,7 @@ forge test
 
 More info about the Deployment command on the [Foundry book documentation site](https://book.getfoundry.sh/forge/deploying.html?highlight=deploy#deploying).
 
-We are going to deploy this contract on Ropsten testnet. That's why the `chain-id` is set to `3` in the `verify-contract` command.
-In order to do that you need to get an RCP_URL from Alchemy or Infura. Replace `YOUR_ROPSTEN_RCP_URL` with your own.
+We are going to deploy this contract on Ropsten testnet. In order to do that you need to get an RCP_URL from Alchemy or Infura. Replace `YOUR_ROPSTEN_RCP_URL` with your own.
 
 ```sh
 forge create --rpc-url YOUR_ROPSTEN_RCP_URL --private-key YOUR_PRIVATE_KEY src/Exp.sol:Exp
